@@ -1,8 +1,4 @@
-import { useRef, useEffect } from 'react'
 import { motion } from 'framer-motion'
-import Hls from 'hls.js'
-
-const HLS_URL = 'https://stream.mux.com/8wrHPCX2dC3msyYU9ObwqNdm00u3ViXvOSHUMRYSEe5Q.m3u8'
 
 function fadeUp(delay: number) {
   return {
@@ -14,31 +10,17 @@ function fadeUp(delay: number) {
 }
 
 export default function CTA() {
-  const videoRef = useRef<HTMLVideoElement>(null)
-
-  useEffect(() => {
-    const video = videoRef.current
-    if (!video) return
-
-    if (Hls.isSupported()) {
-      const hls = new Hls()
-      hls.loadSource(HLS_URL)
-      hls.attachMedia(video)
-      return () => hls.destroy()
-    } else {
-      video.src = HLS_URL
-    }
-  }, [])
-
   return (
     <section className="relative overflow-hidden py-32 md:py-44 border-t border-white/10">
       <video
-        ref={videoRef}
         className="absolute inset-0 w-full h-full object-cover z-0"
+        src="/videos/cta.mp4"
         autoPlay
         loop
         muted
         playsInline
+        disablePictureInPicture
+        style={{ pointerEvents: 'none' }}
       />
       <div className="absolute inset-0 bg-black/55 z-[1]" />
 
