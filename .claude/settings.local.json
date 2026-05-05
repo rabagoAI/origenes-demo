@@ -1,0 +1,23 @@
+{
+  "permissions": {
+    "allow": [
+      "Read(//c/Users/Paco/Desktop/pdf/Claude/origenes-demo/**)",
+      "Bash(npm install *)",
+      "mcp__Claude_Preview__preview_start",
+      "Bash(git init *)",
+      "Bash(git add *)",
+      "Bash(git commit *)",
+      "Bash(gh repo *)",
+      "Bash(where gh *)",
+      "PowerShell(gh --version 2>$null)",
+      "PowerShell(if \\(-not $?\\) { \"gh not found in PowerShell either\" })",
+      "mcp__9226300f-f4d1-4259-8c7e-1343470c633c__deploy_to_vercel",
+      "Bash(npx vercel *)",
+      "Bash(winget --version)",
+      "Bash(winget install *)",
+      "Bash(export PATH=\"$PATH:/c/Program Files/GitHub CLI\")",
+      "Bash(gh --version)",
+      "Bash(gh auth *)"
+    ]
+  }
+}
